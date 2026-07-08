@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bhushan Patil — Instructional Designer & Training Specialist</title>
+<meta name="description" content="Portfolio of Bhushan Patil, Instructional Designer and Training Specialist based in Jalgaon, Maharashtra.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;0,9..144,700;1,9..144,500&family=Inter:wght@400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --navy: #16233D;
+    --navy-deep: #101a2e;
+    --cream: #F7F5EF;
+    --cream-dim: #EFEBDF;
+    --amber: #D9A441;
+    --teal: #2F6E6E;
+    --charcoal: #22252A;
+    --line: rgba(22, 35, 61, 0.14);
+    --display: 'Fraunces', serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+    --maxw: 920px;
+  }
+
+  * { box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    * { animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; transition-duration: 0.01ms !important; }
+  }
+
+  body {
+    margin: 0;
+    background: var(--cream);
+    color: var(--charcoal);
+    font-family: var(--body);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  ::selection { background: var(--amber); color: var(--navy-deep); }
+
+  :focus-visible {
+    outline: 2px solid var(--teal);
+    outline-offset: 3px;
+  }
+
+  /* Progress bar */
+  #progress-track {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%;
+    height: 4px;
+    background: rgba(22,35,61,0.08);
+    z-index: 100;
+  }
+  #progress-fill {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, var(--teal), var(--amber));
+    transition: width 0.1s linear;
+  }
+
+  /* Nav */
+  nav {
+    position: fixed;
+    top: 4px;
+    left: 0; right: 0;
+    z-index: 90;
+    background: rgba(247, 245, 239, 0.88);
+    backdrop-filter: blur(8px);
+    border-bottom: 1px solid var(--line);
+  }
+  .nav-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    padding: 14px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-mark {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.05em;
+    color: var(--navy);
+    text-decoration: none;
+  }
+  .nav-links {
+    display: flex;
+    gap: 22px;
+    list-style: none;
+    margin: 0; padding: 0;
+  }
+  .nav-links a {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.04em;
+    text-decoration: none;
+    color: var(--navy);
+    opacity: 0.65;
+    transition: opacity 0.2s ease;
+  }
+  .nav-links a:hover, .nav-links a:focus-visible { opacity: 1; }
+  .nav-links .done::before { content: "✓ "; color: var(--teal); }
+
+  @media (max-width: 640px) {
+    .nav-links { display: none; }
+  }
+
+  /* Hero */
+  header.hero {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 160px 24px 100px;
+    position: relative;
+    overflow: hidden;
+  }
+  header.hero::after {
+    content: "";
+    position: absolute;
+    right: -120px; top: -120px;
+    width: 380px; height: 380px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(217,164,65,0.18), transparent 70%);
+  }
+  .hero-inner {
+    max-width: var(--maxw);
+    margin: 0 auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 48px;
+    flex-wrap: wrap;
+  }
+  .hero-text { flex: 1 1 420px; }
+  .hero-photo {
+    flex: 0 0 auto;
+    width: 168px;
+    height: 168px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 3px solid var(--amber);
+    box-shadow: 0 0 0 6px rgba(217,164,65,0.12);
+    background: rgba(247,245,239,0.08);
+  }
+  .hero-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+  @media (max-width: 560px) {
+    .hero-photo { width: 120px; height: 120px; }
+  }
+  .eyebrow {
+    font-family: var(--mono);
+    font-size: 13px;
+    letter-spacing: 0.08em;
+    color: var(--amber);
+    margin-bottom: 18px;
+    text-transform: uppercase;
+  }
+  h1.name {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(42px, 8vw, 72px);
+    line-height: 1.05;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  .hero-role {
+    font-size: clamp(18px, 2.4vw, 22px);
+    color: rgba(247,245,239,0.82);
+    max-width: 560px;
+    margin: 0 0 36px;
+  }
+  .hero-meta {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    font-family: var(--mono);
+    font-size: 13px;
+    color: rgba(247,245,239,0.7);
+  }
+  .hero-meta a { text-decoration: none; border-bottom: 1px solid rgba(247,245,239,0.3); padding-bottom: 1px; }
+  .hero-meta a:hover { border-color: var(--amber); color: var(--amber); }
+
+  /* Sections */
+  main { max-width: var(--maxw); margin: 0 auto; padding: 0 24px; }
+
+  section {
+    padding: 90px 0 40px;
+    border-bottom: 1px solid var(--line);
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+  }
+  section.visible { opacity: 1; transform: translateY(0); }
+  section:last-of-type { border-bottom: none; }
+
+  .module-tag {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--teal);
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 14px;
+  }
+  .module-tag .num {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 22px; height: 22px;
+    border-radius: 50%;
+    border: 1px solid var(--teal);
+    font-size: 11px;
+  }
+
+  h2 {
+    font-family: var(--display);
+    font-weight: 600;
+    font-size: clamp(28px, 4vw, 38px);
+    margin: 0 0 26px;
+    letter-spacing: -0.01em;
+  }
+
+  p.lead {
+    font-size: 17px;
+    max-width: 640px;
+    color: #3a3d42;
+  }
+
+  /* Experience */
+  .job {
+    display: grid;
+    grid-template-columns: 160px 1fr;
+    gap: 24px;
+    padding: 26px 0;
+    border-top: 1px solid var(--line);
+  }
+  .job:first-of-type { border-top: none; }
+  .job-period {
+    font-family: var(--mono);
+    font-size: 12.5px;
+    color: var(--teal);
+    padding-top: 3px;
+  }
+  .job-title { font-family: var(--display); font-weight: 600; font-size: 19px; margin: 0 0 4px; }
+  .job-org { font-size: 14.5px; color: var(--navy); font-weight: 600; margin-bottom: 10px; }
+  .job ul { margin: 0; padding-left: 18px; color: #3a3d42; font-size: 15px; }
+  .job li { margin-bottom: 6px; }
+
+  @media (max-width: 640px) {
+    .job { grid-template-columns: 1fr; gap: 6px; }
+  }
+
+  /* Skills */
+  .skill-groups {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 28px;
+    margin-top: 10px;
+  }
+  .skill-group h3 {
+    font-family: var(--mono);
+    font-size: 12px;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    color: var(--navy);
+    margin: 0 0 12px;
+    opacity: 0.75;
+  }
+  .tag-row { display: flex; flex-wrap: wrap; gap: 8px; }
+  .tag {
+    font-size: 13.5px;
+    padding: 6px 12px;
+    background: var(--cream-dim);
+    border: 1px solid var(--line);
+    border-radius: 4px;
+    font-family: var(--body);
+  }
+
+  /* Projects */
+  .project-grid {
+    display: grid;
+    gap: 20px;
+    margin-top: 10px;
+  }
+  .project-card { border: 1px solid var(--line); border-radius: 6px; overflow: hidden; background: #fff; transition: border-color 0.2s ease, transform 0.2s ease; }
+  .project-card:hover { border-color: var(--amber); transform: translateY(-2px); }
+  .project-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+    background: var(--cream-dim);
+  }
+  .hero-photo img,
+  .project-card img {
+    background: linear-gradient(135deg, rgba(217,164,65,0.15), rgba(47,110,110,0.15));
+  }
+  .project-card-body { padding: 22px 26px; }
+  .project-card h3 {
+    font-family: var(--display);
+    font-size: 19px;
+    font-weight: 600;
+    margin: 0 0 8px;
+  }
+  .project-card p { margin: 0; font-size: 15px; color: #3a3d42; }
+
+  /* Contact / Footer */
+  footer.contact {
+    background: var(--navy);
+    color: var(--cream);
+    padding: 90px 24px 60px;
+  }
+  .contact-inner { max-width: var(--maxw); margin: 0 auto; }
+  footer.contact .module-tag { color: var(--amber); }
+  footer.contact .module-tag .num { border-color: var(--amber); }
+  footer.contact h2 { color: var(--cream); }
+  .contact-links {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 28px;
+    margin-top: 30px;
+  }
+  .contact-links a {
+    text-decoration: none;
+    font-family: var(--mono);
+    font-size: 14.5px;
+    color: var(--cream);
+    border-bottom: 1px solid rgba(247,245,239,0.35);
+    padding-bottom: 2px;
+    transition: color 0.2s ease, border-color 0.2s ease;
+  }
+  .contact-links a:hover, .contact-links a:focus-visible {
+    color: var(--amber);
+    border-color: var(--amber);
+  }
+  .footer-note {
+    margin-top: 60px;
+    font-size: 12.5px;
+    font-family: var(--mono);
+    color: rgba(247,245,239,0.5);
+  }
+</style>
+</head>
+<body>
+
+<div id="progress-track"><div id="progress-fill"></div></div>
+
+<nav>
+  <div class="nav-inner">
+    <a href="#top" class="nav-mark">BP · 2026</a>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about" data-target="about">About</a></li>
+      <li><a href="#experience" data-target="experience">Experience</a></li>
+      <li><a href="#skills" data-target="skills">Skills</a></li>
+      <li><a href="#projects" data-target="projects">Projects</a></li>
+      <li><a href="#contact" data-target="contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero" id="top">
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="eyebrow">Instructional Design · Training & Development</div>
+      <h1 class="name">Bhushan Patil</h1>
+      <p class="hero-role">I design learning experiences that turn complex, technical work into training people can actually use — from customer support teams to tens of thousands of first-time learners.</p>
+      <div class="hero-meta">
+        <span>Jalgaon, Maharashtra, India</span>
+        <a href="mailto:bhushanpatil9960@gmail.com">bhushanpatil9960@gmail.com</a>
+        <a href="https://www.linkedin.com/in/bhushanpatil-id" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <div class="hero-photo">
+      <img src="images/headshot.jpg" alt="Bhushan Patil">
+    </div>
+  </div>
+</header>
+
+<main>
+
+  <section id="about">
+    <div class="module-tag"><span class="num">01</span> Module 01 · About</div>
+    <h2>Bridging technology and learning</h2>
+    <p class="lead">
+      Instructional Designer and Training Specialist with 10+ years of experience designing and delivering learning solutions across corporate training, LMS administration, and large-scale government education programs. Skilled at translating complex technical and process knowledge into clear, engaging content for diverse learners.
+    </p>
+    <p class="lead" style="margin-top:16px;">
+      A Computer Science background gives me a technical edge working with LMS platforms, authoring tools like H5P, and eLearning standards such as SCORM, xAPI, and cmi5. I care about purpose-driven work and instructional design that builds real capability, not just course completions.
+    </p>
+  </section>
+
+  <section id="experience">
+    <div class="module-tag"><span class="num">02</span> Module 02 · Experience</div>
+    <h2>Where I've built training</h2>
+
+    <div class="job">
+      <div class="job-period">Current</div>
+      <div>
+        <div class="job-title">Associate Computer Science / Quality &amp; Training Coordinator</div>
+        <div class="job-org">Upthink Experts · Remote</div>
+        <ul>
+          <li>Instructional design and content development for training programs</li>
+          <li>Quality assurance and training coordination for customer support functions</li>
+          <li>LMS administration and training delivery</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Prior</div>
+      <div>
+        <div class="job-title">Software Expert</div>
+        <div class="job-org">MKCL / Siddhesh Infotech Pvt. Ltd.</div>
+        <ul>
+          <li>Delivered eSuvidha software training programs</li>
+          <li>Technical training and software education support</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Prior</div>
+      <div>
+        <div class="job-title">Professional Trainer</div>
+        <div class="job-org">Shashiratna Classes</div>
+        <ul>
+          <li>Computer programming instruction and student tutoring</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="job">
+      <div class="job-period">Government</div>
+      <div>
+        <div class="job-title">Large-Scale Training Programs</div>
+        <div class="job-org">Maharashtra State Initiative</div>
+        <ul>
+          <li>Designed a training framework on nutrition and food safety schemes</li>
+          <li>Trained tens of thousands of women across Maharashtra</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills">
+    <div class="module-tag"><span class="num">03</span> Module 03 · Skills</div>
+    <h2>What I work with</h2>
+    <div class="skill-groups">
+      <div class="skill-group">
+        <h3>Instructional Design &amp; Learning</h3>
+        <div class="tag-row">
+          <span class="tag">Instructional Design</span>
+          <span class="tag">Curriculum Development</span>
+          <span class="tag">LMS Administration</span>
+          <span class="tag">H5P</span>
+          <span class="tag">SCORM</span>
+          <span class="tag">xAPI</span>
+          <span class="tag">cmi5</span>
+          <span class="tag">LRS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Programming &amp; Technical</h3>
+        <div class="tag-row">
+          <span class="tag">Python</span>
+          <span class="tag">SQL</span>
+          <span class="tag">Power BI</span>
+          <span class="tag">Java</span>
+          <span class="tag">JavaFX</span>
+          <span class="tag">HTML &amp; CSS</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Tools &amp; Platforms</h3>
+        <div class="tag-row">
+          <span class="tag">Zoho Desk</span>
+          <span class="tag">Zendesk</span>
+          <span class="tag">Freshdesk</span>
+          <span class="tag">Jira</span>
+          <span class="tag">Confluence</span>
+          <span class="tag">Slack</span>
+        </div>
+      </div>
+      <div class="skill-group">
+        <h3>Education</h3>
+        <div class="tag-row">
+          <span class="tag">B.C.S. — North Maharashtra University</span>
+          <span class="tag">Call Center Executive Trainer</span>
+          <span class="tag">Educational Trainer</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <div class="module-tag"><span class="num">04</span> Module 04 · Projects</div>
+    <h2>Selected work</h2>
+    <div class="project-grid">
+      <div class="project-card">
+        <img src="images/project-h5p.jpg" alt="H5P Interactive Learning Portfolio">
+        <div class="project-card-body">
+          <h3>H5P Interactive Learning Portfolio</h3>
+          <p>An instructional design portfolio modeled on the AFOQT test structure, demonstrating interactive content design using H5P — built as a unified H5P Interactive Book.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project-nutrition.jpg" alt="Government Nutrition and Food Safety Training">
+        <div class="project-card-body">
+          <h3>Government Nutrition &amp; Food Safety Training</h3>
+          <p>Designed and helped deliver a large-scale training framework reaching tens of thousands of women across Maharashtra, focused on nutrition and food safety schemes.</p>
+        </div>
+      </div>
+      <div class="project-card">
+        <img src="images/project-esuvidha.jpg" alt="eSuvidha Software Training">
+        <div class="project-card-body">
+          <h3>eSuvidha Software Training</h3>
+          <p>Technical training program delivered as part of MKCL's software education initiatives.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="contact" id="contact">
+  <div class="contact-inner">
+    <div class="module-tag"><span class="num">05</span> Module 05 · Contact</div>
+    <h2>Let's talk training</h2>
+    <p class="lead" style="color: rgba(247,245,239,0.8);">Open to conversations about instructional design, L&amp;D, and training roles.</p>
+    <div class="contact-links">
+      <a href="mailto:bhushanpatil9960@gmail.com">bhushanpatil9960@gmail.com</a>
+      <a href="tel:+919960993112">+91 9960993112</a>
+      <a href="https://www.linkedin.com/in/bhushanpatil-id" target="_blank" rel="noopener">linkedin.com/in/bhushanpatil-id</a>
+    </div>
+    <div class="footer-note">© 2026 Bhushan Patil. Built with care.</div>
+  </div>
+</footer>
+
+<script>
+  // Progress bar
+  const fill = document.getElementById('progress-fill');
+  function updateProgress() {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const pct = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    fill.style.width = pct + '%';
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Section reveal + nav "done" checkmarks
+  const sections = document.querySelectorAll('main section, footer.contact');
+  const navLinks = document.querySelectorAll('#nav-links a');
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        const id = entry.target.id;
+        const link = document.querySelector(`.nav-links a[data-target="${id}"]`);
+        if (link) link.classList.add('done');
+      }
+    });
+  }, { threshold: 0.2 });
+
+  sections.forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
