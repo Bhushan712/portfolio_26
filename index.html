@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Call Center Executive – Theory Quiz</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/styles/h5p.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #f4f6f8;
+    }
+    header {
+      background: #1F4E79;
+      color: #fff;
+      padding: 18px 24px;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 20px;
+    }
+    header p {
+      margin: 4px 0 0;
+      font-size: 13px;
+      color: #cfe0f0;
+    }
+    #h5p-container {
+      max-width: 900px;
+      margin: 24px auto;
+      background: #fff;
+      border-radius: 8px;
+      box-shadow: 0 1px 4px rgba(0,0,0,0.15);
+      padding: 8px;
+      min-height: 300px;
+    }
+    .fallback {
+      max-width: 900px;
+      margin: 24px auto;
+      padding: 16px 20px;
+      background: #fff3cd;
+      border: 1px solid #ffe08a;
+      border-radius: 6px;
+      font-size: 14px;
+      color: #664d03;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Call Center Executive (TEL/Q0100) — Theory Quiz</h1>
+    <p>Instructional Design by Bhushan Patil</p>
+  </header>
+
+  <div id="h5p-container"></div>
+  <div class="fallback" id="fallback-msg" style="display:none;">
+    Quiz content not found yet. Once the exported H5P content is placed inside
+    <code>h5p-content/call-center-quiz/</code>, this page will load it automatically.
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/main.bundle.js"></script>
+  <script>
+    window.addEventListener('DOMContentLoaded', function () {
+      const container = document.getElementById('h5p-container');
+      const options = {
+        h5pJsonPath: './h5p-content/call-center-quiz',
+        frameJs: 'https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/frame.bundle.js',
+        frameCss: 'https://cdn.jsdelivr.net/npm/h5p-standalone@3.8.0/dist/styles/h5p.css'
+      };
+
+      new H5PStandalone.H5P(container, options).catch(function (err) {
+        console.error(err);
+        document.getElementById('fallback-msg').style.display = 'block';
+      });
+    });
+  </script>
+</body>
+</html>
